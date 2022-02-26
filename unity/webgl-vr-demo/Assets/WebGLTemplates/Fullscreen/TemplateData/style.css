@@ -5,11 +5,11 @@ html, body {
 }
 #webxr-info {
     width: 100%;
-    vh: 10;
+    height: 10vh;
 }
 #unity-container {
     width: 100%;
-    vh: 90;
+    height: 90vh;
 }
 #unity-canvas {
     width: 100%;

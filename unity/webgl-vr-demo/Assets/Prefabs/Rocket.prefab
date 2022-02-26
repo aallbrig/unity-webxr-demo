@@ -140,7 +140,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2260756857998429868}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -157,7 +157,7 @@ ConstantForce:
   m_GameObject: {fileID: 2260756857998429868}
   m_Enabled: 1
   m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 20, z: 0}
+  m_RelativeForce: {x: 0, y: 40, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!65 &2260756857998429856
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketExhaust: {fileID: 1314605007863768201}
   force: {fileID: 2260756857998429859}
+  engineOn: 0
 --- !u!1 &3717558329670340325
 GameObject:
   m_ObjectHideFlags: 0
