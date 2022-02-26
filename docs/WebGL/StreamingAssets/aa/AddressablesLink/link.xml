@@ -26,6 +26,7 @@
     <type fullname="UnityEngine.CapsuleCollider" preserve="all" />
   </assembly>
   <assembly fullname="Scripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Aircraft" preserve="all" />
     <type fullname="Rocket" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
