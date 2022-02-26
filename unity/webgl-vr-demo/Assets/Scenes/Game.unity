@@ -475,10 +475,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2260756857998429859, guid: cabb49a66877d4848b518b751b711a66, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429868, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_Name
       value: Rocket (3)
@@ -552,7 +548,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6778
+  m_Name: pb_Mesh19708
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1847,7 +1843,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
+  m_BackGroundColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2120,10 +2116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10.241
       objectReference: {fileID: 0}
-    - target: {fileID: 2260756857998429859, guid: cabb49a66877d4848b518b751b711a66, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429868, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_Name
       value: Rocket (4)
@@ -2251,25 +2243,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2260756856553888156, guid: cabb49a66877d4848b518b751b711a66, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2260756856553888156, guid: cabb49a66877d4848b518b751b711a66, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.87
-      objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.06
+      value: 9.63
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.34
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2372,7 +2356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28038
+  m_Name: pb_Mesh19726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2712,6 +2696,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4904040901135455725, guid: 3f373760da1de44ceb2e5320054fde52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6437410703968053299, guid: 3f373760da1de44ceb2e5320054fde52, type: 3}
       propertyPath: m_RootOrder
       value: 3
