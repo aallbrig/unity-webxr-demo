@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792166201458746182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2124312216306468775}
@@ -171,6 +171,8 @@ GameObject:
   - component: {fileID: 2124312216128373021}
   - component: {fileID: 1898325595}
   - component: {fileID: 1898325594}
+  - component: {fileID: 2395550525414113669}
+  - component: {fileID: 2414659853129264604}
   m_Layer: 0
   m_Name: Enemy Fighter Aircraft
   m_TagString: Untagged
@@ -222,6 +224,31 @@ ConstantForce:
   m_RelativeForce: {x: -10, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0.1, y: 0, z: 0}
+--- !u!114 &2395550525414113669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124312216128373020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04229bd45f654149ba26f248da6009fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2414659853129264604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124312216128373020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!1 &2124312216190122003
 GameObject:
   m_ObjectHideFlags: 0
