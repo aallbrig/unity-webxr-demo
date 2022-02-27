@@ -1,6 +1,6 @@
 # WebGL VR (using Unity webGL) demo
 
-### [Play Experience Now](https://aallbrig.github.io/webgl-vr-demo/WebGL/index.html)
+### [Play Experience Now](https://aallbrig.github.io/unity-webxr-demo/WebGL/index.html)
 
 ![QR Code to play game](media/play-game-qr-code.png)
 
