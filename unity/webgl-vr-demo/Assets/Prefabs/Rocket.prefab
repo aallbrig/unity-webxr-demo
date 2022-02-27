@@ -188,8 +188,8 @@ MonoBehaviour:
   rocketExhaust: {fileID: 1314605007863768201}
   force: {fileID: 2260756857998429859}
   engineOn: 0
-  explosionForce: 35
-  explosionRange: 2.5
+  explosionForce: 100
+  explosionRange: 3
 --- !u!1 &3717558329670340325
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
             // TODO: later add code complexity to enable flexibility
             // Probably check for a component that impl some sort of interface
             var maybeRocket = hit.transform.GetComponent<Rocket>();
-            if (maybeRocket != null) maybeRocket.ToggleEngine();
+            if (maybeRocket != null) maybeRocket.TurnOnEngine();
         }
     }
 }

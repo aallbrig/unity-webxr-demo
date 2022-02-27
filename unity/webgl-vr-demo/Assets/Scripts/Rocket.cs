@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
     public ParticleSystem rocketExhaust;
     public ConstantForce force;
-    public bool engineOn = false;
+    public bool engineOn;
     [Range(1f, 100f)]
     public float explosionForce = 25f;
     [Range(0f, 5f)]
@@ -32,7 +31,7 @@ public class Rocket : MonoBehaviour
         force.enabled = false;
         rocketExhaust.Stop();
     }
-    private void TurnOnEngine()
+    public void TurnOnEngine()
     {
         engineOn = true;
         force.enabled = true;
@@ -52,8 +51,15 @@ public class Rocket : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(ExplosionOrigin, explosionRange); 
-        Gizmos.color = Color.red;
-        _aircraftWithinRange.ForEach(aircraft => Gizmos.DrawLine(ExplosionOrigin, aircraft.transform.position));
+        _aircraftWithinRange.ForEach(aircraft =>
+        {
+            var heading = aircraft.transform.position - ExplosionOrigin;
+            var normalizedDirection = heading / heading.magnitude;
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(ExplosionOrigin, normalizedDirection * explosionRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(ExplosionOrigin, (ExplosionOrigin - aircraft.transform.position).normalized * (explosionRange * 2));
+        });
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -64,9 +70,10 @@ public class Rocket : MonoBehaviour
     {
         _aircraftWithinRange.ForEach(aircraft =>
         {
-            var explosionDirection = (ExplosionOrigin - aircraft.transform.position).normalized * explosionForce;
+            var explosionForceDirection = (ExplosionOrigin - aircraft.transform.position).normalized * explosionForce;
+            var rigidBody = aircraft.GetComponent<Rigidbody>();
             aircraft.GetComponent<ConstantForce>().enabled = false;
-            aircraft.GetComponent<Rigidbody>().AddForce(explosionDirection, ForceMode.VelocityChange);
+            rigidBody.AddForce(explosionForceDirection, ForceMode.Impulse);
         });
         gameObject.SetActive(false);
     }
