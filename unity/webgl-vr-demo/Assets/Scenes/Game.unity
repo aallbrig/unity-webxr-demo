@@ -807,17 +807,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1059754667}
     m_Modifications:
+    - target: {fileID: 2260756857998429856, guid: cabb49a66877d4848b518b751b711a66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.6
+      value: 7.27
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.03
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 2260756857998429857, guid: cabb49a66877d4848b518b751b711a66, type: 3}
       propertyPath: m_LocalPosition.z

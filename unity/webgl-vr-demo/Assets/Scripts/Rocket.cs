@@ -52,17 +52,13 @@ public class Rocket : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(ExplosionOrigin, explosionRange); 
         _aircraftWithinRange.ForEach(aircraft =>
-        {
-            var heading = aircraft.transform.position - ExplosionOrigin;
-            var normalizedDirection = heading / heading.magnitude;
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(ExplosionOrigin, normalizedDirection * explosionRange);
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(ExplosionOrigin, (ExplosionOrigin - aircraft.transform.position).normalized * (explosionRange * 2));
-        });
+            Gizmos.DrawLine(ExplosionOrigin, CalculateExplosionForceDirection(aircraft))
+        );
     }
+
     private void OnCollisionEnter(Collision collision)
     {
+        // This rocket can only explode on aircraft types. Extension point, if rockets can explode on other things
         var aircraft = collision.transform.GetComponent<Aircraft>();
         if (aircraft) Explode();
     }
@@ -70,11 +66,14 @@ public class Rocket : MonoBehaviour
     {
         _aircraftWithinRange.ForEach(aircraft =>
         {
-            var explosionForceDirection = (ExplosionOrigin - aircraft.transform.position).normalized * explosionForce;
             var rigidBody = aircraft.GetComponent<Rigidbody>();
             aircraft.GetComponent<ConstantForce>().enabled = false;
-            rigidBody.AddForce(explosionForceDirection, ForceMode.Impulse);
+            rigidBody.AddForce(CalculateExplosionForceDirection(aircraft), ForceMode.Impulse);
         });
         gameObject.SetActive(false);
+    }
+    private Vector3 CalculateExplosionForceDirection(Aircraft aircraft)
+    {
+        return (aircraft.transform.position - ExplosionOrigin).normalized * explosionForce;
     }
 }
