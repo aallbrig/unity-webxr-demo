@@ -52,8 +52,12 @@ public class Rocket : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(ExplosionOrigin, explosionRange); 
         _aircraftWithinRange.ForEach(aircraft =>
-            Gizmos.DrawLine(ExplosionOrigin, CalculateExplosionForceDirection(aircraft))
-        );
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(ExplosionOrigin, aircraft.transform.position);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(aircraft.transform.position, NormalizedDirection(aircraft) * 12.5f);
+        });
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -68,12 +72,11 @@ public class Rocket : MonoBehaviour
         {
             var rigidBody = aircraft.GetComponent<Rigidbody>();
             aircraft.GetComponent<ConstantForce>().enabled = false;
+            aircraft.GetComponent<Rigidbody>().useGravity = false;
             rigidBody.AddForce(CalculateExplosionForceDirection(aircraft), ForceMode.Impulse);
         });
         gameObject.SetActive(false);
     }
-    private Vector3 CalculateExplosionForceDirection(Aircraft aircraft)
-    {
-        return (aircraft.transform.position - ExplosionOrigin).normalized * explosionForce;
-    }
+    private Vector3 CalculateExplosionForceDirection(Aircraft aircraft) => NormalizedDirection(aircraft) * explosionForce;
+    private Vector3 NormalizedDirection(Aircraft aircraft) => (aircraft.transform.position - ExplosionOrigin).normalized;
 }
