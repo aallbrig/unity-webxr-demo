@@ -7,7 +7,7 @@ var config = {
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Andrew Allbright",
     productName: "WebGL VR demo",
-    productVersion: "0.0.27",
+    productVersion: "0.0.28",
     devicePixelRatio: 1,
 }
 
