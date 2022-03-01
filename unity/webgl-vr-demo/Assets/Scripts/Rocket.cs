@@ -72,7 +72,6 @@ public class Rocket : MonoBehaviour
         {
             var rigidBody = aircraft.GetComponent<Rigidbody>();
             aircraft.GetComponent<ConstantForce>().enabled = false;
-            aircraft.GetComponent<Rigidbody>().useGravity = false;
             rigidBody.AddForce(CalculateExplosionForceDirection(aircraft), ForceMode.Impulse);
         });
         gameObject.SetActive(false);
